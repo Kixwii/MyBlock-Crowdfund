@@ -46,21 +46,17 @@ function App(){
     <div className='app'>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
-      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"></link>
       <div className='app-header'>
       </div>
-      
-      {/* <div className='app-login_image'>
-         <img src={require('./assets/crowdfund_image2.png')} alt=""/>
-        </div> */}
 
       <div className='app-wrapper'>
         {!isConnected && (
           <div>
             <h1>MyBlock, A blockchain crowdfunding platform</h1>
-             <button className='app-button_login' onClick={onConnect}>
+              <button className='app-button_login' onClick={onConnect}>
               Login
-            </button>
+              </button>
           </div>
         )}
       </div>
