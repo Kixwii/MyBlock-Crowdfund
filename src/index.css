@@ -1,7 +1,7 @@
 .app {
   display: flex;
   flex-direction: column;
-  font-family:"Lexend Giga", sans-serif;
+  font-family:"Manrope", sans-serif;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -65,4 +65,22 @@ h1 {
 .app-button_logout:hover {
   background-color: #e6cece;
   color: rgb(252, 1, 1);
+}
+
+.app-messages {
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: lightgrey;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
 }
