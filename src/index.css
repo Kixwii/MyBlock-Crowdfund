@@ -60,6 +60,7 @@ h1 {
 .app-button_login:hover {
   background-color: #5900ff;
   color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 .app-button_logout:hover {
@@ -84,3 +85,72 @@ h1 {
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  display: space-between;
+  flex-direction: horizontal;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.form-group label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.form-group input {
+  font-size: 1.2rem;
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: 2ch;
+  border: none;
+}
+
+.app-button_signup {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Space Mono', monospace;
+  background-color: rgb(16, 56, 149);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.app-button_signup:hover {
+  background-color: #f8f8f8;
+  color: rgb(16, 56, 149);
+  border: 2px solid rgb(16, 56, 149);
+  transition: all 0.3s ease-in-out;
+}
+
+.back-option button{
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-family: 'Space Mono', monospace; 
+  cursor: pointer;
+  background-color: rgb(16, 56, 149);
+  color:white;
+}
+
+.back-option button:hover {
+  background-color: #f8f8f8;
+  color: rgb(16, 56, 149);
+  border: 2px solid rgb(16, 56, 149);
+  transition: all 0.3s ease-in-out;
+}
+
