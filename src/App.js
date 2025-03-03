@@ -5,7 +5,6 @@ function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [ethBalance, setEthBalance] = useState("");
   const [transactionMessage, setTransactionMessage] = useState("");
-  const [showSignUp, setShowSignUp] = useState(false);
 
   const detectCurrentProvider = () => {
     let provider;
@@ -42,6 +41,13 @@ function App() {
             setTransactionMessage(`🟡 New transaction detected: ${txHash}`);
           }
         });
+      } else {
+        // Show popup alert if MetaMask is not installed
+        window.alert("MetaMask is not installed. Please install MetaMask to use this application: https://metamask.io/download/");
+        // Optionally open MetaMask download page
+        if (window.confirm("Would you like to install MetaMask now?")) {
+          window.open("https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?utm_source=localhost", "_blank");
+        }
       }
     } catch (error) {
       setTransactionMessage(`❌ Connection failed: ${error.message}`);
@@ -85,22 +91,6 @@ function App() {
     }
   };
 
-  const handleNoMetaMask = () => {
-    setShowSignUp(true);
-  };
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    // Here you would normally handle the sign-up process
-    // For now, we'll just show a message
-    setTransactionMessage("✅ Sign-up successful! Now install MetaMask to continue.");
-    
-    // Redirect to MetaMask download page after a short delay
-    setTimeout(() => {
-      window.open("https://metamask.io/download/", "_blank");
-    }, 3000);
-  };
-
   return (
     <div className='app'>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -110,57 +100,15 @@ function App() {
       </div>
 
       <div className='app-wrapper'>
-        {!isConnected && !showSignUp && (
+        {!isConnected && (
           <div>
             <h1>MyBlock, A blockchain crowdfunding platform</h1>
             <button className='app-button_login' onClick={onConnect}>
-              Login with MetaMask
+              Login
             </button>
-            <div className="no-metamask-section">
-              <p>Don't have MetaMask?</p>
-              <button className='app-button_signup' onClick={handleNoMetaMask}>
-                Sign Up
-              </button>
-            </div>
-          </div>
-        )}
-
-        {showSignUp && !isConnected && (
-          <div className="signup-form-container">
-            <h2>Create Your Account</h2>
-            <p>Please sign up to use MyBlock. You'll need to install MetaMask afterward.</p>
-            <form onSubmit={handleSignUp}>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" placeholder="Create a password" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" placeholder="Confirm your password" required />
-              </div>
-              <button type="submit" className="app-button_signup">
-                Create Account
-              </button>
-            </form>
-            <div className="back-option">
-              <button onClick={() => setShowSignUp(false)} className="app-button_back">
-                <span className="arrow-left">←</span>
-              </button>
-            </div>
-            <div className="metamask-info">
-              <p>After creating your account, you'll need to install MetaMask to interact with the blockchain.</p>
-              <a href="https://metamask.io/download/" target="_blank" rel="noopener noreferrer">
-                Learn more about MetaMask
-              </a>
-            </div>
           </div>
         )}
       </div>
-      
       {isConnected && (
         <div className='app-wrapper'>
           <div className='app-details'>

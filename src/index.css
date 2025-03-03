@@ -20,6 +20,7 @@
 
 h1 {
   display: flex;
+  font-family: 'Lexend Giga', sans-serif;
   flex-direction: column;
   position: absolute;
   align-items: stretch;
@@ -44,6 +45,9 @@ h1 {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  background-color: rgb(16, 56, 149);
+  color: white;
 }
 
 .app-button_logout {
@@ -58,14 +62,17 @@ h1 {
 }
 
 .app-button_login:hover {
-  background-color: #5900ff;
-  color: white;
-  transition: all 0.3s ease-in-out;
+  background-color: white;
+  color: rgb(16, 56, 149);
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(16, 56, 149);
 }
 
 .app-button_logout:hover {
-  background-color: #e6cece;
+  background-color: white;
   color: rgb(252, 1, 1);
+  border: 2px solid rgb(252, 1, 1);
+  transition: all 0.1s ease-in-out;
 }
 
 .app-messages {
@@ -86,7 +93,7 @@ h1 {
   transition: all 0.3s ease-in-out;
 }
 
-.signup-form-container {
+/* .signup-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,9 +120,9 @@ h1 {
   padding: 10px;
   border-radius: 2ch;
   border: none;
-}
+} */
 
-.app-button_signup {
+/* .app-button_signup {
   padding: 10px;
   font-size: 1rem;
   font-family: 'Space Mono', monospace;
@@ -153,4 +160,4 @@ h1 {
   border: 2px solid rgb(16, 56, 149);
   transition: all 0.3s ease-in-out;
 }
-
+ */
